@@ -184,9 +184,9 @@
 			<268000 348000>,
 			<505000 657000>;
 		qcom,buffer-type-tz-usage-table = <0x1 0x1>,
-			<0x6 0x2>,
-			<0x7C0 0x3>;
-		qcom,max-hw-load = <352800>; /* 720p @ 30 + 1080p @ 30 */
+            <0x6 0x2>,
+            <0x7C0 0x3>;
+        qcom,max-hw-load = <352800>; /* 720p @ 30 + 1080p @ 30 */
 		qcom,vidc-iommu-domains {
 			qcom,domain-ns {
 				qcom,vidc-domain-phandle = <&venus_domain_ns>;
@@ -298,7 +298,7 @@
 		compatible = "qcom,android-usb";
 		reg = <0xfe8050c8 0xc8>;
 		qcom,android-usb-swfi-latency = <1>;
-		qcom,streaming-func = "rndis";
+		qcom,streaming-func = "rndis", "ecm", "mtp";
 	};
 
 	hsic_host: hsic@f9a00000 {
@@ -990,9 +990,9 @@
 		interrupt-names = "qup_err_intr";
 		qcom,i2c-bus-freq = <400000>;
 		qcom,i2c-src-freq = <19200000>;
+		qcom,master-id = <86>;
 		qcom,sda-gpio = <&msmgpio 10 0>;
 		qcom,scl-gpio = <&msmgpio 11 0>;
-		qcom,master-id = <86>;
 	};
 	i2c@f9926000 { /* BLSP-1 QUP-4 */
 		cell-index = <0>;
@@ -1017,6 +1017,7 @@
 		interrupts = <0 99 0>;
 		qcom,i2c-bus-freq = <384000>;
 		qcom,i2c-src-freq = <19200000>;
+		qcom,master-id = <86>;
 		qcom,sda-gpio = <&msmgpio 18 0>;
 		qcom,scl-gpio = <&msmgpio 19 0>;
 	};
@@ -1032,7 +1033,7 @@
 			< 787200000 2>,
 			<1190400000 3>;
 		qcom,speed1-bin-v2 =
-			<         0 0>,
+			< 0 0>,
 			< 192000000 2>,
 			< 300000000 2>,
 			< 384000000 2>,
